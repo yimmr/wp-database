@@ -13,3 +13,8 @@ composer require impack/wordpress
 ## 相关文档
 
 -   [《Impack WordPress 文档》](https://imwp.yimmr.com/)
+
+## 联系方式
+
+-   邮箱：service@yimmr.com
+-   QQ: imon1668
