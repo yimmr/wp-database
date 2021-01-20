@@ -21,7 +21,7 @@ class Form
             $string .= "$key=\"$value\" ";
         }
 
-        return trim($attr);
+        return trim($string);
     }
 
     /**

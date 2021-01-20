@@ -1,6 +1,6 @@
 <?php
 
-namespace Impack\WP\Register;
+namespace Imon;
 
 abstract class TaxField
 {
