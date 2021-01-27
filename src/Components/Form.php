@@ -187,7 +187,17 @@ class Form
     }
 
     /**
-     * 返回字段相关的JS或CSS代码
+     * 引入所有字段的脚本和样式
+     */
+    public static function enqueue()
+    {
+        \wp_enqueue_media();
+        \wp_add_inline_style('mediaelement', static::script('css'));
+        \wp_add_inline_script('mediaelement', static::script('js'));
+    }
+
+    /**
+     * 返回字段的JS或CSS代码
      *
      * @param string $type
      * @return string
