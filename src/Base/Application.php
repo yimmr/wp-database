@@ -1,8 +1,10 @@
 <?php
-namespace Impack\WP;
+
+namespace Impack\WP\Base;
 
 use Impack\Container\Container;
 use Impack\Contracts\Foundation\Application as ApplicationContract;
+use Impack\WP\Base\Config;
 
 class Application extends Container implements ApplicationContract
 {
@@ -28,7 +30,7 @@ class Application extends Container implements ApplicationContract
         $this->instance('app', $this);
         $this->instance(Container::class, $this);
 
-        $this->singleton('config', \Impack\WP\Config::class);
+        $this->singleton('config', Config::class);
     }
 
     /**
@@ -167,9 +169,9 @@ class Application extends Container implements ApplicationContract
     {
         foreach ([
             'app'        => [self::class, ApplicationContract::class, \Impack\Contracts\Container\Container::class],
-            'config'     => [\Impack\WP\Config::class, \Impack\Contracts\Config\Repository::class],
-            'filesystem' => [\Impack\WP\Support\Filesystem::class],
-            'remote'     => [\Impack\WP\Http\Remote::class],
+            'config'     => [Config::class, \Impack\Contracts\Config\Repository::class],
+            'filesystem' => [\Impack\WP\Base\Filesystem::class],
+            // 'remote'     => [\Impack\WP\Http\Remote::class],
         ] as $id => $aliases) {
             foreach ($aliases as $alias) {
                 $this->alias($id, $alias);

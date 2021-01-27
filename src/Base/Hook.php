@@ -1,9 +1,9 @@
 <?php
 
-namespace Impack\WP\Support;
+namespace Impack\WP\Base;
 
 use Impack\Support\Str;
-use Impack\WP\Application;
+use Impack\WP\Base\Application;
 use ReflectionObject;
 
 class Hook

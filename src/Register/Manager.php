@@ -217,7 +217,7 @@ class Manager
 
         foreach ((array) $fields as $field) {
             if (class_exists($field) && is_callable($field, 'add')) {
-                $field::add($taxonomy);
+                call_user_func([$field, 'add'], $taxonomy);
             }
         }
     }

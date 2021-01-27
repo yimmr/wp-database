@@ -1,9 +1,10 @@
 <?php
-namespace Impack\WP;
+
+namespace Impack\WP\Base;
 
 use Impack\Config\Config as ImpackConfig;
-use Impack\WP\Application;
-use Impack\WP\OptionLoader;
+use Impack\WP\Base\Application;
+use Impack\WP\Base\OptionLoader;
 
 class Config extends ImpackConfig
 {

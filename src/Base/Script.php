@@ -1,6 +1,6 @@
 <?php
 
-namespace Impack\WP\Support;
+namespace Impack\WP\Base;
 
 class Script
 {
@@ -98,14 +98,28 @@ class Script
     /**
      * 输出页内脚本
      *
-     * @param  string  $script
+     * @param  string  $data
      * @param  string  $handle
      * @param  string  $position
      * @return $this
      */
-    public function inline($script, $handle = 'jquery', $position = 'after')
+    public function inlineJs($data, $handle = 'jquery', $position = 'after')
     {
-        \wp_add_inline_script($handle, $script, $position);
+        \wp_add_inline_script($handle, $data, $position);
+
+        return $this;
+    }
+
+    /**
+     * 输出页内样式
+     *
+     * @param  string  $data
+     * @param  string  $handle
+     * @return $this
+     */
+    public function inlineCss($data, $handle = 'style')
+    {
+        \wp_add_inline_style($handle, $data);
 
         return $this;
     }

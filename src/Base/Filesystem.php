@@ -1,6 +1,6 @@
 <?php
 
-namespace Impack\WP\Support;
+namespace Impack\WP\Base;
 
 use Exception;
 use Impack\Support\Str;

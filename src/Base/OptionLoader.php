@@ -1,6 +1,6 @@
 <?php
 
-namespace Impack\WP;
+namespace Impack\WP\Base;
 
 use Impack\Contracts\Config\Loader;
 
