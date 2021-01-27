@@ -14,5 +14,13 @@
         "impack/contracts": "^1.0",
         "filp/whoops": "^2.7",
         "impack/config": "^1.0"
-    }
+    },
+    "replace": {
+        "impack/wp-components": "self.version"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

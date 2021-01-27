@@ -59,7 +59,7 @@ class Script
     {
         $this->ext('css');
 
-        \wp_enqueue_script(
+        \wp_enqueue_style(
             $this->handle($handle ?: $name),
             $this->getPath($this->baseUrl, $name),
             $deps,

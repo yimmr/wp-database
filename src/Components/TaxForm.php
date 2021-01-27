@@ -2,7 +2,7 @@
 
 namespace Impack\WP\Components;
 
-class TaxFrom
+class TaxForm
 {
     /**
      * 新建标签的字段组件

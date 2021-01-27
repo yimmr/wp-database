@@ -1,0 +1,80 @@
+.image-field {
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 0 0 transparent;
+    cursor: pointer;
+}
+
+.image-field:active {
+    box-shadow: 0 0 0 1px #9ebaa0;
+}
+
+.image-field,
+.image-field > * {
+    border-radius: 4px;
+}
+
+.image-field > * {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    transition: all 0.3s ease-out;
+}
+
+.image-field > img {
+    right: 0;
+    margin: auto;
+    width: auto;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+.image-field > .tips,
+.image-field > img + .cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-field > img + .cancel + .tips {
+    opacity: 0;
+}
+
+.image-field > .tips {
+    box-sizing: border-box;
+    border: 1px solid #7e8993;
+    background-color: #fff;
+    z-index: 0;
+}
+
+.image-field > .tips:hover {
+    background-color: #fafafa;
+}
+
+.image-field:active > .tips {
+    border-color: #9ebaa0;
+}
+
+.image-field > .cancel {
+    display: none;
+    opacity: 0;
+}
+
+.image-field > img + .cancel {
+    height: 25%;
+    color: #fff;
+    background-color: #ff6c6c;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.image-field > img + .cancel::after {
+    content: '\2716';
+}
+
+.image-field > img + .cancel:hover {
+    opacity: 1;
+}

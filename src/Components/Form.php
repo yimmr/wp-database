@@ -155,4 +155,45 @@ class Form
 
         return $id . $checked == $value ? ' checked' : '';
     }
+
+    /**
+     * 返回上传图片的字段
+     *
+     * @param string $name
+     * @param int $value
+     * @param string $size  单位px,val=宽度:高占比
+     * @param string $class
+     * @param array $attr
+     * @return string
+     */
+    public static function image($name, $value = null, $size = '100', $class = '', $attr = [])
+    {
+        $size = explode(':', $size);
+
+        $attr['style'] = ($attr['style'] ?? '') . ";width:$size[0]px;height:" . (isset($size[1]) ? $size[0] * $size[1] : $size[0]) . 'px';
+
+        $html = sprintf('<span class="image-field %s" %s>', $class, static::getAttr($attr));
+
+        if ($imageUrl = \wp_get_attachment_image_url($value, 'full')) {
+            $html .= sprintf('<img src="%s">', $imageUrl);
+        }
+
+        $html .= '<span class="cancel" onclick="ImwpImageField.cancel(this)"></span>';
+        $html .= '<span class="tips" onclick="ImwpImageField.upload(this)">上传</span>';
+        $html .= static::input($name, $value, 'hidden');
+        $html .= '</span>';
+
+        return $html;
+    }
+
+    /**
+     * 返回字段相关的JS或CSS代码
+     *
+     * @param string $type
+     * @return string
+     */
+    public static function script($type = 'js')
+    {
+        return file_get_contents(__DIR__ . '/assets/form.' . $type);
+    }
 }

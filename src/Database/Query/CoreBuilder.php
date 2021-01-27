@@ -5,8 +5,8 @@ namespace Impack\WP\Database\Query;
 use Closure;
 use Impack\Contracts\Support\Arrayable;
 use Impack\Support\Str;
-use Impack\WP\Database\Meta;
 use Impack\WP\Database\Query\BaseQueryMethod;
+use Impack\WP\Database\Query\Meta;
 use Impack\WP\Database\Query\MixedQuery;
 
 class CoreBuilder
@@ -453,7 +453,7 @@ class CoreBuilder
     /**
      * 返回meta交互的单例
      *
-     * @return \Impack\WP\Utils\Meta
+     * @return \Impack\WP\Database\Query\Meta
      */
     public function getMetaInstance()
     {

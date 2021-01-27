@@ -18,7 +18,7 @@ trait BaseQueryMethod
             return [];
         }
 
-        if (empty($items = (array) $items) || !is_callable([$items[0], 'to_array'])) {
+        if (empty($items = (array) $items) || !is_callable([current($items), 'to_array'])) {
             return $items;
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Impack\WP\Database;
+namespace Impack\WP\Database\Query;
 
 use Impack\WP\Database\Fluent\Model;
 
