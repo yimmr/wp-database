@@ -170,11 +170,11 @@ class CoreBuilder
      */
     public function select($column = '*')
     {
-        if ($column == 'id') {
+        if (in_array($column, ['id', 'ID', 'term_id', 'comment_ID'])) {
             $column = $this->from == 'users' ? 'ID' : 'ids';
         }
 
-        $this->columns['fields'] = $column == '*' ? 'all' : $column;
+        $this->where['fields'] = $column == '*' ? 'all' : $column;
 
         return $this;
     }
@@ -206,6 +206,19 @@ class CoreBuilder
     public function offset($value)
     {
         $this->where['offset'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * 指定页码
+     *
+     * @param int $value
+     * @return $this
+     */
+    public function paged($value)
+    {
+        $this->where['paged'] = $value;
 
         return $this;
     }

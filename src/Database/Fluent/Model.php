@@ -21,6 +21,7 @@ use JsonSerializable;
  * @method static \Impack\WP\Database\Fluent\Builder|\Impack\WP\Database\Query\CoreBuilder orderBy($column, $direction = 'asc')
  * @method static \Impack\WP\Database\Fluent\Builder|\Impack\WP\Database\Query\CoreBuilder limit($number, $offset = null)
  * @method static \Impack\WP\Database\Fluent\Builder|\Impack\WP\Database\Query\CoreBuilder offset($value)
+ * @method static \Impack\WP\Database\Fluent\Builder|\Impack\WP\Database\Query\CoreBuilder paged($value)
  * @method static \Impack\WP\Database\Fluent\Builder|\Impack\WP\Database\Query\CoreBuilder onlyTrashed()
  * @method static \Impack\WP\Database\Fluent\Builder|\Impack\WP\Database\Query\CoreBuilder getQueryVars()
  * @method static \Impack\WP\Database\Fluent\Builder|\Impack\WP\Database\Query\CoreBuilder whereMeta($key, $value = '', $compare = '=', $type = null)
